@@ -93,7 +93,6 @@ All network traffic is isolated in VMnet8 to prevent accidental attacks on produ
 
 [![SOC Homelab Network Topology](screenshots/01-network-topology/vmware-network-config.png)](https://github.com/Brady0Reid/SOC-Homelab/blob/main/screenshots/01-network-topology/vmware-network-config.png)
 
-
 ### Traffic Flow
 
 1. **Attack Vector** 🔴 Kali (`192.168.253.140`) → Windows Target (`192.168.253.131`)
