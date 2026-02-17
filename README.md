@@ -91,7 +91,8 @@ All network traffic is isolated in VMnet8 to prevent accidental attacks on produ
 
 ## 🗺️ Network Topology
 
-![SOC Homelab Network Topology](diagrams/network-topology.svg)
+[![SOC Homelab Network Topology](screenshots/01-network-topology/vmware-network-config.png)](https://github.com/Brady0Reid/SOC-Homelab/blob/main/screenshots/01-network-topology/vmware-network-config.png)
+
 
 ### Traffic Flow
 
