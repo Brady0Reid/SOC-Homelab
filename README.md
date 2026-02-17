@@ -15,7 +15,7 @@
 - [Overview](#-overview)
 - [Architecture](#-architecture)
 - [Lab Components](#-lab-components)
-- [Network Topology](#-network-topology)
+- [Network Topology](https://github.com/Brady0Reid/SOC-Homelab/blob/main/screenshots/01-network-topology/vmware-network-config.png)
 - [Installation & Setup](#-installation--setup)
 - [Attack Scenarios](#-attack-scenarios)
 - [Detection & Response](#-detection--response)
