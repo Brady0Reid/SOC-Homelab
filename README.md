@@ -12,17 +12,18 @@
 
 ## 📋 Table of Contents
 
-- [Overview](#-overview)
-- [Architecture](#-architecture)
-- [Lab Components](#-lab-components)
-- [Network Topology](https://github.com/Brady0Reid/SOC-Homelab/blob/main/screenshots/01-network-topology/vmware-network-config.png)
-- [Installation & Setup](#-installation--setup)
-- [Attack Scenarios](#-AttackScenarios)
-- [Detection & Response](#-detection--response)
-- [Screenshots & Evidence](#-screenshots--evidence)
-- [Skills Demonstrated](#-skills-demonstrated)
-- [Future Enhancements](#-future-enhancements)
-- [Resources](#-resources)
+- [Overview](#overview)
+- [Architecture](#architecture)
+- [Lab Components](#lab-components)
+- [Network Topology](#network-topology)
+- [Installation & Setup](#installation-setup)
+- [Attack Scenarios](#attack-scenarios)
+- [Detection & Response](#detection-response)
+- [Screenshots & Evidence](#screenshots-evidence)
+- [Skills Demonstrated](#skills-demonstrated)
+- [Future Enhancements](#future-enhancements)
+- [Resources](#resources)
+- [Connect](#connect)
 
 ---
 
@@ -249,29 +250,61 @@ These scenarios will be documented with full screenshots and PCAP evidence:
 
 ## 📸 Screenshots & Evidence
 
-Screenshots will be organized in `/screenshots/` by attack phase:
+Evidence organized by attack phase — from network configuration through full incident response.
 
-```
-screenshots/
-├── 01-network-topology/
-│   └── vmware-network-config.png
-├── 02-reconnaissance/
-│   ├── nmap-network-scan.png
-│   └── service-enumeration.png
-├── 03-exploitation/
-│   ├── metasploit-eternalblue.png
-│   └── meterpreter-session.png
-├── 04-detection/
-│   ├── security-onion-alerts.png
-│   ├── wazuh-dashboard.png
-│   └── sysmon-event-logs.png
-├── 05-incident-response/
-│   ├── thehive-case-created.png
-│   ├── shuffle-workflow.png
-│   └── remediation-steps.png
-└── 06-pcap-analysis/
-    └── wireshark-attack-traffic.png
-```
+---
+
+### 01 · Network Topology & Infrastructure
+
+| Screenshot | Description |
+|------------|-------------|
+| ![VMware Network Config](screenshots/01-network-topology/vmware-network-config.png) | VMnet8 NAT configuration — subnet 192.168.253.0/24, DHCP enabled, all 6 VMs isolated |
+
+---
+
+### 02 · Reconnaissance
+
+| Screenshot | Description |
+|------------|-------------|
+| ![Nmap Network Scan](screenshots/02-reconnaissance/nmap-network-scan.png) | Nmap ping sweep discovering all live hosts on 192.168.253.0/24 |
+| ![Service Enumeration](screenshots/02-reconnaissance/service-enumeration.png) | Service version scan on Windows target — open ports, SMB 445, RDP 3389 identified |
+
+---
+
+### 03 · Exploitation
+
+| Screenshot | Description |
+|------------|-------------|
+| ![Metasploit EternalBlue](screenshots/03-exploitation/metasploit-eternalblue.png) | MS17-010 EternalBlue exploit configured in Metasploit — RHOST and LHOST set |
+| ![Meterpreter Session](screenshots/03-exploitation/meterpreter-session.png) | Meterpreter session established on Windows target — NT AUTHORITY\SYSTEM |
+
+---
+
+### 04 · Detection
+
+| Screenshot | Description |
+|------------|-------------|
+| ![Security Onion Alerts](screenshots/04-detection/security-onion-alerts.png) | Suricata/Zeek alerts firing in Security Onion during exploitation |
+| ![Wazuh Dashboard](screenshots/04-detection/wazuh-dashboard.png) | Wazuh SIEM showing host-based alerts — Sysmon process creation events |
+| ![Sysmon Event Logs](screenshots/04-detection/sysmon-event-logs.png) | Windows Sysmon Event ID 1 — malicious process creation detected |
+
+---
+
+### 05 · Incident Response
+
+| Screenshot | Description |
+|------------|-------------|
+| ![TheHive Case Created](screenshots/05-incident-response/thehive-case-created.png) | TheHive case opened — severity High, observables and IOCs added |
+| ![Shuffle Workflow](screenshots/05-incident-response/shuffle-workflow.png) | Shuffle SOAR automation workflow — Wazuh alert to TheHive case to analyst notification |
+| ![Remediation Steps](screenshots/05-incident-response/remediation-steps.png) | Host isolation and persistence removal — registry key deleted, network disabled |
+
+---
+
+### 06 · PCAP Analysis
+
+| Screenshot | Description |
+|------------|-------------|
+| ![Wireshark Attack Traffic](screenshots/06-pcap-analysis/wireshark-attack-traffic.png) | Wireshark packet capture of SMB exploitation — EternalBlue payload visible in stream |
 
 ---
 
