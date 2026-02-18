@@ -394,4 +394,4 @@ This project demonstrates real-world SOC operations skills for **entry-level SOC
 
 **Project Status:** 🟡 In Progress - Baseline configuration complete, attack scenarios in development
 
-**Last Updated:** February 2025
+**Last Updated:** February 2026
